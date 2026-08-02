@@ -1,0 +1,13 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+# Runs the Drizzle schema push on every deploy to keep the DB in sync,
+# then exits cleanly (Railway treats exit 0 as a successful one-shot service).
+startCommand = "npm run db:push"
+restartPolicyType = "never"
+
+[env]
+# Set DATABASE_URL in the Railway service Variables dashboard.
+# Do NOT commit real secrets here.
+NODE_ENV = "production"

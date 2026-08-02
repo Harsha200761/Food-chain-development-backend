@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "db:push": "drizzle-kit push",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "build": "echo \"No build step required\"",
+    "start": "node -e \"require('dotenv').config(); console.log('Database schema service ready. Use db:push to sync schema.');\""
   },
   "dependencies": {
     "dotenv": "^16.4.5",
@@ -11,6 +14,8 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.31.10"
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
   }
 }
